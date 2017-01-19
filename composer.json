@@ -9,6 +9,7 @@
         "laravel/framework": "5.3.*"
     },
     "require-dev": {
+        "doctrine/dbal": "~2.3",
         "barryvdh/laravel-ide-helper": "^2.2",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
