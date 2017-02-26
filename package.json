@@ -11,6 +11,7 @@
     "gulp": "^3.9.1",
     "jquery": "^3.1.0",
     "laravel-elixir": "^6.0.0-14",
+    "laravel-elixir-angular": "^1.0.1",
     "laravel-elixir-vue-2": "^0.2.0",
     "laravel-elixir-webpack-official": "^1.0.2",
     "lodash": "^4.16.2",
@@ -18,5 +19,13 @@
     "vue-loader": "^10.0.2",
     "vue-resource": "^1.0.3",
     "vue-template-compiler": "^2.1.10"
+  },
+  "dependencies": {
+    "angular": "^1.6.2",
+    "bootstrap-social": "^5.1.1",
+    "bootstrap-table": "^1.11.0",
+    "font-awesome": "^4.7.0",
+    "vue-bootstrap-table": "^0.1.2",
+    "vue-bootstrap-table2": "^1.0.1"
   }
 }

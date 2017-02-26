@@ -1,0 +1,1 @@
+<a class="btn btn-xs btn-social-icon btn-{{$social}}"><i class="fa fa-{{$social}}"></i></a>

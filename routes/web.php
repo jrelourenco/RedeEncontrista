@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Model\Encontrista;
+
+Route::name('home')
+    ->get('/', function () {
+        return view('welcome');
+    });
 
 
 Route::get('/home', 'HomeController@index');
@@ -24,12 +27,15 @@ Route::get('/home', 'HomeController@index');
  */
 Route::group([], function () {
     // Authentication Routes...
-    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::name('login')
+        ->get('login', 'Auth\LoginController@showLoginForm');
     Route::post('login', 'Auth\LoginController@login');
-    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+    Route::name('logout')
+        ->get('logout', 'Auth\LoginController@logout');
 
     // Registration Routes...
-    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    Route::name('register')
+        ->get('register', 'Auth\RegisterController@showRegistrationForm');
     Route::post('register', 'Auth\RegisterController@register');
 
     // Password Reset Routes...
@@ -43,6 +49,26 @@ Route::get("/group", function () {
     return view('group');
 });
 
-Route::get("/profile", function () {
-    return view('pages.profile.index');
-});
+Route::name('profile')
+    ->get("/profile/{user?}", function ($user = null) {
+        $user = is_null($user) ? Auth::user() : Encontrista::find($user);
+        return view('pages.profile.index', ['profile' => $user]);
+    });
+Route::name('curriculum')
+    ->get("/curriculum/{user?}", function ($user = null) {
+        $user = is_null($user) ? Auth::user() : Encontrista::find($user);
+        return view('pages.curriculum.index', ['profile' => $user]);
+    });
+
+
+Route::name('calendar')
+    ->get("/calendar/{user?}", function ($user = null) {
+        $user = is_null($user) ? Auth::user() : Encontrista::find($user);
+
+        return view('pages.calendar.index', $user);
+    });Route::name('groups')
+    ->get("/groups/{user?}", function ($user = null) {
+        $user = is_null($user) ? Auth::user() : Encontrista::find($user);
+
+        return view('pages.groups.index', $user);
+    });

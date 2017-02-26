@@ -1,0 +1,20 @@
+{
+  "name": "RedeV2.1",
+  "description": "",
+  "main": "",
+  "authors": [
+    "jrel <jrelourenco@outlook.pt>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jrelourenco/RedeEncontrista",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-side-navbar": "^1.0.1"
+  }
+}

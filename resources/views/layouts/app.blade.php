@@ -22,7 +22,8 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div id="app" class="container-fluid">
+
     <div class="row">
         <div class="col-sm-3 col-lg-2">
             @include('layouts.navbar')
@@ -30,7 +31,7 @@
         <div class="col-sm-9 col-lg-10">
 
 
-            <div class="container-fluid">
+            <div class="container">
                 <div class="page-header">
                     <h1>
                         @yield('page-title')
@@ -55,6 +56,7 @@
 
 
 <!-- Scripts -->
+<script src="/js/vendor.js"></script>
 <script src="/js/app.js"></script>
 </body>
 </html>
